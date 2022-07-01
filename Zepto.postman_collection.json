@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "90736b53-b4f8-4e1c-808b-f9d1cc7f66b1",
+		"name": "Zepto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetSeats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/seat?userId={{userId}}&trainId={{trainId}}&coachId={{coachId}}&status={{status}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"seat"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						},
+						{
+							"key": "trainId",
+							"value": "{{trainId}}"
+						},
+						{
+							"key": "coachId",
+							"value": "{{coachId}}"
+						},
+						{
+							"key": "status",
+							"value": "{{status}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/booking?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/booking?userId={{userId}}&bookingId={{bookingId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						},
+						{
+							"key": "bookingId",
+							"value": "{{bookingId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Saumya Khandelwal\",\n    \"address\":\"ABC-123\",\n    \"pinCode\":560102,\n    \"userType\":\"ADMIN\",\n    \"age\":28,\n    \"gender\":\"FEMALE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Train",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\":\"Alwar\",\n    \"to\":\"Kashmir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/admin/train?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"train"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Train",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/admin/train?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"train"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Coach",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"trainId\":\"{{trainId}}\",\n    \"coachType\":\"NON_AC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/admin/train/coach?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"train",
+						"coach"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booked Seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"bookingDate\":{\n       \"departure\":\"2022-02-24T00:00:00\",\n       \"arrival\":\"2022-02-25T00:00:00\"\n   },\n   \"trainId\":\"{{trainId}}\",\n   \"coachId\":\"{{coachId}}\",\n   \"seats\":[\"{{s1}}\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/booking?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user?userId={{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
